@@ -98,6 +98,10 @@ export default function UserSignUpDomain() {
     return true;
   };
 
+  if (isUser) {
+    return <></>;
+  }
+
   return (
     <section>
       <article className={styles.art}>

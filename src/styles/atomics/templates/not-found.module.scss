@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem;
+    .title {
+        font-size: var(--font-size-700);
+        color: var(--color-gray-roboflow-600);
+    }
+    
+    .description {
+        font-size: var(--font-size-500);
+        color: var(--color-gray-roboflow-500);
+        margin-top: 16px;
+    }
+}

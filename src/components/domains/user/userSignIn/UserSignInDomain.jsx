@@ -81,6 +81,10 @@ export default function UserSignInDomain() {
     return true;
   };
 
+  if (isUser) {
+    return <></>;
+  }
+
   return (
     <section>
       <article className={styles.art}>

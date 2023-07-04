@@ -55,5 +55,6 @@ module.exports = {
     'react/jsx-no-constructed-context-values': 0,
     'jsx-a11y/no-static-element-interactions': 0,
     'jsx-a11y/anchor-is-valid': 0,
+    'react/function-component-definition': 0,
   },
 };

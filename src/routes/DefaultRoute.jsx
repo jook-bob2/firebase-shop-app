@@ -2,6 +2,7 @@ import React from 'react';
 import AppContainer from '@containers/AppContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ADMIN_ROUTES, USER_ROUTES } from './index';
+import NotFound from '@src/components/atomics/templates/NotFound';
 
 export default function DefaultRouter() {
   return (
@@ -22,6 +23,7 @@ export default function DefaultRouter() {
               element={<route.element />}
             />
           ))}
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </AppContainer>
     </BrowserRouter>

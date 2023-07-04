@@ -9,7 +9,7 @@
         border-radius: 4px;
         cursor: pointer;
         background-color: var(--color-background-default);
-        font-weight: 600;
+        font-weight: var(--font-weight-semibold);
 
         &:hover {
             background-color: var(--color-teal-spabattical-300);
