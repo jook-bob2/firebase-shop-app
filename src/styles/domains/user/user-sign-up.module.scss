@@ -1,0 +1,88 @@
+@import '../../_variables';
+
+section {
+    .art{
+        margin:0 auto;   
+        padding: 2vh 0 10vh;
+        display: flex;
+        flex-direction: column;
+        max-width:32vw;
+    }
+
+    .row_wrap{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.2rem;
+
+        &:first-child{
+            margin-top: 0;
+        }
+        
+        .ttl{
+            position: relative;
+            text-align: right;
+            width: 7rem;
+            flex-shrink: 0;
+
+            &::after{
+                content: '*';
+                position: absolute;
+                color: var(--color-background-primary-strong);
+            }
+        }
+    }
+
+    .input_wrap{
+        margin-left: 1rem;
+
+        &.input_ad{
+            display: flex;
+            gap: 0.5rem;
+            flex-direction: column;
+        }
+    }
+    .input{
+        border-radius: 12px;
+        width: 22vw;
+
+        &.ad_input{
+            width: 50%;
+        }
+    }
+
+    
+
+    .ad_box{
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: start;
+
+        .add_input{
+            width: 45%;
+        }
+        .input{
+            width: 100%;
+        }
+
+        button{
+            background-color: $white;
+            border-radius: 4px;
+            margin-left: 12px;
+            
+            border: 1px solid var(--color-border-container);
+        }
+    }
+    
+
+    .btn_wrap{
+        margin-top: 2rem;
+        background-color: $dusty-teal;
+    }
+    .btn{
+        color: $white;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+}

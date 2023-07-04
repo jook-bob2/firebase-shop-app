@@ -1,0 +1,14 @@
+.wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.75rem;
+
+    .button_wrap {
+        background-color: var(--color-green-matchacado-0);
+    }
+    .button_class {
+        color: var(--color-teal-spabattical-900);
+    }
+}

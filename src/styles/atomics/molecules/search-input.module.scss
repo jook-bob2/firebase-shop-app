@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    
+    .btn_area {
+        position: relative;
+
+        button {
+            position: absolute;
+            width: 17px;
+            top: 10px;
+            right: 14px;
+            margin: 0;
+            background-color: var(--color-white-mochimalist-0);
+        }
+        
+        input {
+            border: solid 1px var(--color-border-container);
+            border-radius: 16px;
+            font-size: 1rem;
+            padding: 8px 40px 8px 8px;
+            width: 222px;
+            box-sizing: border-box;
+            outline: none;
+        }
+    }
+
+}

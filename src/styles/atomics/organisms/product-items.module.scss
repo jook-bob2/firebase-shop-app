@@ -1,0 +1,32 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .contents {
+        padding: 1.25rem;
+        .first {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .second {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: center;
+            right: 1rem;
+        }
+        .third {
+            display: flex;
+            margin-top: 4rem;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.wrap {
+    margin: 2.5rem;
+    .img_area {
+        margin-bottom: 1.25rem;
+    }
+    .info_area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span {
+            margin: 0.25rem;
+            font-size: large;
+            font-weight: 600;
+        }
+    }
+}

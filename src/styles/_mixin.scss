@@ -1,0 +1,123 @@
+@import './variables';
+
+// media query
+@mixin mobile {
+	@media (min-width: 0) and (max-width: #{$breakpoint-tablet - 1px}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$breakpoint-desktop}) {
+		@content;
+	}
+}
+
+@mixin prefix($property, $value, $prefixes: ()) {
+	@each $prefix in $prefixes {
+		#{'-' + $prefix + '-' + $property}: $value;
+	}
+	#{$property}: $value;
+}
+
+@mixin flex($justify, $align) {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	@if $justify == space-between {
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+	} @else if $justify == flex-start {
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+	} @else if $justify == flex-end {
+		-webkit-box-pack: end;
+		-ms-flex-pack: end;
+	} @else {
+		-webkit-box-pack: $justify;
+		-ms-flex-pack: $justify;
+	}
+	@if $align == flex-start {
+		-webkit-box-align: start;
+		-ms-flex-align: start;
+	} @else if $align == flex-end {
+		-webkit-box-align: end;
+		-ms-flex-align: end;
+	} @else {
+		-webkit-box-align: $align;
+		-ms-flex-align: $align;
+	}
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin btn($w, $h, $bg, $font-size, $font-weight, $color) {
+	width: $w;
+	height: $h;
+	background: $bg;
+	border-radius: 3px;
+	transition: 0.2s;
+	border: 1px solid transparent;
+	@include flex(center, center);
+	display: inline-flex;
+	line-height: 1;
+	span {
+		font-size: $font-size;
+		font-weight: $font-weight;
+		color: $color;
+		letter-spacing: -0.4px;
+		transition: 0.2s;
+	}
+	&:hover {
+		@if $bg == $blueberry {
+			border-color: $blueberry;
+			background: $white;
+			span {
+				color: $blueberry;
+			}
+		} @else if $bg == $algae {
+			border-color: $algae;
+			background: $white;
+			span {
+				color: $algae;
+			}
+		} @else if $bg == $dusty-teal {
+			border-color: $dusty-teal;
+			background: $white;
+			span {
+				color: $dusty-teal;
+			}
+		} @else if $bg == $dull-blue {
+			border-color: $dull-blue;
+			background: $white;
+			span {
+				color: $dull-blue;
+			}
+		} @else if $bg == $warm-grey {
+			border-color: $warm-grey;
+			background: $white;
+			span {
+				color: $warm-grey;
+			}
+		} @else if $bg == $white {
+			@if $color == $blueberry {
+				background: $blueberry;
+				span {
+					color: $white;
+				}
+			}
+			@if $color == $warm-grey {
+				background: $warm-grey;
+				span {
+					color: $white;
+				}
+			}
+		}
+	}
+}

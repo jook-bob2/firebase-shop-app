@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+
+    input {
+        border: solid 1px var(--color-border-container);
+        border-radius: 12px;
+        font-size: 1rem;
+        padding: 0.5rem;
+        width: 222px;
+    }
+}

@@ -1,0 +1,19 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: var(--color-background-default);
+        font-weight: 600;
+
+        &:hover {
+            background-color: var(--color-teal-spabattical-300);
+            color: var(--color-purple-mysticool-0)
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+    span {
+        color: var(--g-colorGray400);
+        font-weight: 700;
+        font-size: xx-large;
+    }
+}

@@ -1,0 +1,18 @@
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 767px;
+$breakpoint-desktop: 1240px;
+
+// color
+$algae: #5cae6a;
+$dusty-teal: #4a9f86;
+$dull-blue: #457591;
+$blueberry: #4b3f8f;
+$warm-grey: #808080;
+$black: #202020;
+$pinkish-grey: #cccccc;
+$white: #ffffff;
+// $black: #303030;
+$pale-grey: #fafafc;
+$deep-white: #f6f6f6;
+
+$gradient: linear-gradient(91deg, $algae 0%, $algae 8%, $dusty-teal 47%, $blueberry 91%, $blueberry 100%);
