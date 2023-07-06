@@ -4,6 +4,7 @@
     width: 100%;
     .contents {
         padding: 1.25rem;
+        width: 100%;
         .first {
             position: absolute;
             display: flex;
@@ -23,10 +24,36 @@
         }
         .third {
             display: flex;
-            margin-top: 4rem;
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+
+            .active_margin {
+                margin-top: 5rem;
+            }
+
+            .no_selection {
+                user-select: none;
+            }
+
+            .swiper_wrap {
+                background: url('/public/images/main_background.avif') center center/cover no-repeat;
+                background-size: contain;
+                background-color: floralwhite;
+                height: 56.5vh;
+            }
+            
+            .item {
+                text-align: center;
+            }
+            .item_border_active {
+                border: solid 1px var(--color-gray-roboflow-200);
+                border-radius: 2.5rem;
+                margin-left: .5rem;
+                margin-right: .5rem;
+            }
         }
     }
 }

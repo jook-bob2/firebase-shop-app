@@ -1,10 +1,9 @@
 header {
     display: flex;
-    // justify-content: center;
     align-items: center;
-    margin: 2rem 8px;
     position: relative;
-    padding: 0 1rem;
+    padding: 2rem;
+    border-bottom: solid .5px var(--color-gray-roboflow-200);
 
     .wrap{
         display: flex;
@@ -27,6 +26,7 @@ header {
                 padding: 0.5rem; 
                 cursor: pointer;
                 user-select: none;
+                box-shadow: 2px 2px 5px 0px;
             }
         }
     }

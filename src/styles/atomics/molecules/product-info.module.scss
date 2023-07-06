@@ -1,5 +1,11 @@
 .wrap {
     margin: 2.5rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
     .img_area {
         margin-bottom: 1.25rem;
     }
@@ -12,6 +18,7 @@
             margin: 0.25rem;
             font-size: large;
             font-weight: var(--font-weight-semibold);
+            color: var(--color-gray-roboflow-600);
         }
     }
 }

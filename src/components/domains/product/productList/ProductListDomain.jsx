@@ -1,13 +1,13 @@
+import React from 'react';
 import ProductItems from '@src/components/atomics/organisms/ProductItems';
 import {
   SUB_CATEGORY_LIST,
   TOP_CATEGORY_LIST,
 } from '@src/constants/CATEGORY_LIST';
-import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import '@styles/domains/product/product-list.module.scss';
+import { PRODUCT_ITEM_MOCK_LIST } from '@src/mocks/productMock';
 
-const NO_IMAGE = '/public/images/no_image.webp';
 export default function ProductListDomain() {
   const [params] = useSearchParams();
   const topId = params.get('topId');
@@ -19,24 +19,16 @@ export default function ProductListDomain() {
   return (
     <section>
       <ProductItems
+        isSwiper
+        itemList={PRODUCT_ITEM_MOCK_LIST}
+        title={'핫이슈'}
+      />
+      <ProductItems
         title={title}
         isMore={true}
         isCategory={true}
         categoryList={[...categoryList]}
-        itemList={[
-          {
-            productId: '1',
-            name: '옷1',
-            price: '3000',
-            image: NO_IMAGE,
-          },
-          {
-            productId: '2',
-            name: '옷2',
-            price: '2000',
-            image: NO_IMAGE,
-          },
-        ]}
+        itemList={PRODUCT_ITEM_MOCK_LIST}
       />
     </section>
   );
