@@ -34,6 +34,9 @@ export default function ProductItems({
   categoryList,
   isSwiper,
 }) {
+  const isActiveTopMargin = isCategory || isMore;
+  const activeTopMargin = isActiveTopMargin ? styles.active_margin : null;
+
   return (
     <div className={styles.wrap}>
       {/* 타이틀 */}
@@ -114,7 +117,7 @@ export default function ProductItems({
                     className={cx(
                       styles.item,
                       styles.item_border_active,
-                      styles.active_margin,
+                      activeTopMargin,
                     )}
                   >
                     <ProductInfo
@@ -131,7 +134,7 @@ export default function ProductItems({
                   className={cx(
                     styles.item,
                     styles.item_border_active,
-                    styles.active_margin,
+                    activeTopMargin,
                     styles.no_data,
                   )}
                 >

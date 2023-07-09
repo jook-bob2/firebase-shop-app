@@ -1,5 +1,6 @@
 import AdmMain from '@src/pages/adm/main';
 import AdmProductMngt from '@src/pages/adm/product-mngt';
+import AdmProductMngtWrite from '@src/pages/adm/product-mngt/write';
 import AdmUserMngt from '@src/pages/adm/user-mngt';
 import Home from '@src/pages/home';
 import Product from '@src/pages/product';
@@ -48,6 +49,11 @@ export const ADMIN_ROUTES = [
   },
   {
     key: 3,
+    path: '/adm/product-mngt/write',
+    element: AdmProductMngtWrite,
+  },
+  {
+    key: 4,
     path: '/adm/user-mngt',
     element: AdmUserMngt,
   },

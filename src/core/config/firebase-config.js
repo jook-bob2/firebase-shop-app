@@ -5,6 +5,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from 'firebase/auth';
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -32,4 +33,5 @@ export default {
   firebaseDB,
   firebaseSignUp: createUserWithEmailAndPassword,
   firebaseSignIn: signInWithEmailAndPassword,
+  firebaseSignOut: signOut,
 };

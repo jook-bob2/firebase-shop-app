@@ -16,6 +16,11 @@ export default function ProductListDomain() {
   const [categoryList, setCategoryList] = useState([]);
   const [popularList, setPopularList] = useState([]);
   const [title, setTile] = useState('');
+  const [isInit, setIsInit] = useState(false);
+
+  useEffect(() => {
+    setIsInit(true);
+  }, []);
 
   useEffect(() => {
     fetchPopularList();
@@ -26,14 +31,20 @@ export default function ProductListDomain() {
   }, [topId]);
 
   const fetchProductList = async () => {
-    try {
-      const products = await getProductList(topId);
-      setProductList(products);
-      const categoryItem = await getCategoryItem(topId);
-      setCategoryList(categoryItem?.subCategories || []);
-      setTile(categoryItem.name);
-    } catch (err) {
-      console.error('Products error ', err);
+    if (topId) {
+      try {
+        const products = await getProductList(topId);
+        setProductList(products);
+        const categoryItem = await getCategoryItem(topId);
+        setCategoryList(categoryItem?.subCategories || []);
+        setTile(categoryItem.name);
+
+        if (isInit) {
+          window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+        }
+      } catch (err) {
+        console.error('Products error ', err);
+      }
     }
   };
 

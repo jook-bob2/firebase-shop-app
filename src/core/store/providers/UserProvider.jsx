@@ -15,6 +15,10 @@ export function UserProvider({ children }) {
     return !!user;
   }, [user]);
 
+  const isAdmin = useMemo(() => {
+    return user?.role === 'admin';
+  }, [user]);
+
   useEffect(() => {
     initializedUser();
   }, []);
@@ -37,7 +41,7 @@ export function UserProvider({ children }) {
 
   return (
     <UserStateContext.Provider
-      value={{ userState, userDispatch, addUser, initUser, isUser }}
+      value={{ userState, userDispatch, addUser, initUser, isUser, isAdmin }}
     >
       {children}
     </UserStateContext.Provider>
@@ -45,7 +49,8 @@ export function UserProvider({ children }) {
 }
 
 export const useUser = () => {
-  const { userState, addUser, initUser, isUser } = useContext(UserStateContext);
+  const { userState, addUser, initUser, isUser, isAdmin } =
+    useContext(UserStateContext);
 
-  return { userState, addUser, initUser, isUser };
+  return { userState, addUser, initUser, isUser, isAdmin };
 };

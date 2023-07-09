@@ -18,6 +18,7 @@ header {
 
             span {
                 margin-right: 1rem;
+                margin-left: 1rem;
                 color: var(--color-green-matchacado-800);
                 font-weight: var(--font-weight-semibold);
                 font-size: var(--font-size-300);
@@ -27,6 +28,9 @@ header {
                 cursor: pointer;
                 user-select: none;
                 box-shadow: 2px 2px 5px 0px;
+            }
+            a {
+                border-bottom: solid 1px var(--g-colorGray300);
             }
         }
     }

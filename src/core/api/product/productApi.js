@@ -1,5 +1,5 @@
 import firebaseConfig from '@src/core/config/firebase-config';
-import { getDocs, collection, query, where } from 'firebase/firestore';
+import { getDocs, collection, query, where, limit } from 'firebase/firestore';
 
 const { firebaseDB } = firebaseConfig;
 
@@ -7,7 +7,11 @@ const productsCollectionRef = collection(firebaseDB, 'products');
 const POPULAR_ID = '1002';
 
 export async function getProductList(categoryId) {
-  const q = query(productsCollectionRef, where('categoryId', '==', categoryId));
+  const q = query(
+    productsCollectionRef,
+    where('categoryId', '==', categoryId),
+    limit(10),
+  );
   const data = await getDocs(q);
   return data.docs.map((d) => d.data());
 }

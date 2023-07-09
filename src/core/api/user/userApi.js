@@ -1,8 +1,13 @@
 import firebaseConfig from '@src/core/config/firebase-config';
-import { addDoc, collection, getDocs } from 'firebase/firestore';
+import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 
-const { firebaseSignUp, firebaseSignIn, firebaseAuth, firebaseDB } =
-  firebaseConfig;
+const {
+  firebaseSignUp,
+  firebaseSignIn,
+  firebaseAuth,
+  firebaseDB,
+  firebaseSignOut,
+} = firebaseConfig;
 
 const usersCollectionRef = collection(firebaseDB, 'user');
 
@@ -41,7 +46,15 @@ export async function postUserSignIn({ email, password }) {
  * @desc 유저정보
  */
 export async function getUserInfo(uid) {
-  const data = await getDocs(usersCollectionRef);
-  const list = data.docs;
-  return list.find((d) => d.data().uid === uid)?.data();
+  const q = query(usersCollectionRef, where('uid', '==', uid));
+  const data = await getDocs(q);
+  const d = data.docs.map((u) => u.data())[0];
+  return d;
+}
+
+/**
+ * @desc 로그아웃
+ */
+export async function postSignOut() {
+  await firebaseSignOut(firebaseAuth);
 }

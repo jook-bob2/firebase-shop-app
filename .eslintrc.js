@@ -57,5 +57,7 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 0,
     'react/function-component-definition': 0,
     'no-unused-vars': 'warn',
+    'no-restricted-syntax': 0,
+    'no-await-in-loop': 0,
   },
 };

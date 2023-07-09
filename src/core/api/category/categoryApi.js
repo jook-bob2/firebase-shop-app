@@ -5,16 +5,13 @@ const { firebaseDB } = firebaseConfig;
 const categoriesCollectionRef = collection(firebaseDB, 'categories');
 
 export async function getCategoryList() {
-  const data = await getDocs(categoriesCollectionRef);
+  const q = query(categoriesCollectionRef, orderBy('id', 'asc'));
+  const data = await getDocs(q);
   return data.docs.map((d) => d.data());
 }
 
 export async function getCategoryItem(id) {
-  const q = query(
-    categoriesCollectionRef,
-    where('id', '==', id),
-    orderBy('id', 'desc'),
-  );
+  const q = query(categoriesCollectionRef, where('id', '==', id));
   const querySnapshot = await getDocs(q);
   return querySnapshot.docs.map((d) => d.data())[0];
 }

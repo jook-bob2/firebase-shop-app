@@ -4,9 +4,10 @@ import SearchInput from '../../molecules/SearchInput';
 import Logo from '../../atoms/Logo';
 import UserInfoIcons from '../../molecules/UserInfoIcons';
 import { useUser } from '@src/core/store/providers/UserProvider';
+import { Link } from 'react-router-dom';
 
 export default function UserHeader() {
-  const { userState, isUser } = useUser();
+  const { userState, isUser, isAdmin } = useUser();
 
   return (
     <header>
@@ -18,7 +19,17 @@ export default function UserHeader() {
           <SearchInput />
         </div>
         <div className={styles.user_info_wrap}>
-          {isUser && <span>{userState.name}님 </span>}
+          {isUser && (
+            <>
+              {isAdmin && (
+                <Link to={{ pathname: '/adm/product-mngt/write' }}>
+                  상품등록
+                </Link>
+              )}
+
+              <span>{userState.name}님 </span>
+            </>
+          )}
           <UserInfoIcons />
         </div>
       </div>
