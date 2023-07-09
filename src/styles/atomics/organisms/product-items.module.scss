@@ -39,7 +39,7 @@
             }
 
             .swiper_wrap {
-                background: url('/public/images/main_background.avif') center center/cover no-repeat;
+                background: url('/images/main_background.avif') center center/cover no-repeat;
                 background-size: contain;
                 background-color: floralwhite;
                 height: 56.5vh;
@@ -53,6 +53,9 @@
                 border-radius: 2.5rem;
                 margin-left: .5rem;
                 margin-right: .5rem;
+            }
+            .no_data {
+                padding: 1rem;
             }
         }
     }

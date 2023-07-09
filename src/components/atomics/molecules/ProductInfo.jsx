@@ -3,6 +3,7 @@ import Img from '../atoms/Img';
 import Span from '../atoms/Span';
 import styles from '@styles/atomics/molecules/product-info.module.scss';
 import { createSearchParams, Link } from 'react-router-dom';
+import { NO_IMAGE } from '@src/mocks/productMock';
 
 export default function ProductInfo({ name, src, onError, price, productId }) {
   return (
@@ -14,7 +15,7 @@ export default function ProductInfo({ name, src, onError, price, productId }) {
             search: `?${createSearchParams({ productId })}`,
           }}
         >
-          <Img src={src} onError={onError} width={192} />
+          <Img src={src || NO_IMAGE} onError={onError} width={192} />
         </Link>
       </div>
       <div className={styles.info_area}>

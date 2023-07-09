@@ -24,6 +24,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/effect-coverflow';
 
+const MAX_SLIDE_PER_VIEW = 4;
+
 export default function ProductItems({
   title,
   itemList,
@@ -53,7 +55,7 @@ export default function ProductItems({
         )}
         <div className={styles.third}>
           {/* 아이템 목록 */}
-          {isSwiper ? (
+          {isSwiper && itemList?.length > 0 ? (
             <Swiper
               className={styles.swiper_wrap}
               effect={'coverflow'}
@@ -79,31 +81,33 @@ export default function ProductItems({
                 delay: 2500,
                 disableOnInteraction: false,
               }}
-              slidesPerView={4}
+              slidesPerView={
+                itemList.length - 1 > MAX_SLIDE_PER_VIEW
+                  ? MAX_SLIDE_PER_VIEW
+                  : itemList.length - 1
+              }
               navigation
               pagination={{ clickable: true }}
               scrollbar={{ draggable: true }}
-              // onSlideChange={() => console.log('slide change')}
             >
-              {itemList?.length > 0 &&
-                itemList.map((item, index) => (
-                  <SwiperSlide
-                    key={index}
-                    className={`${styles.item} ${styles.no_selection}`}
-                  >
-                    <ProductInfo
-                      productId={item.productId}
-                      name={item.name}
-                      onError={item.onError}
-                      price={item.price}
-                      src={item.image}
-                    />
-                  </SwiperSlide>
-                ))}
+              {itemList.map((item, index) => (
+                <SwiperSlide
+                  key={index}
+                  className={`${styles.item} ${styles.no_selection}`}
+                >
+                  <ProductInfo
+                    productId={item.productId}
+                    name={item.name}
+                    onError={item.onError}
+                    price={item.price}
+                    src={item.image}
+                  />
+                </SwiperSlide>
+              ))}
             </Swiper>
           ) : (
             <>
-              {itemList?.length > 0 &&
+              {itemList?.length > 0 ? (
                 itemList.map((item, index) => (
                   <div
                     key={index}
@@ -121,7 +125,19 @@ export default function ProductItems({
                       src={item.image}
                     />
                   </div>
-                ))}
+                ))
+              ) : (
+                <div
+                  className={cx(
+                    styles.item,
+                    styles.item_border_active,
+                    styles.active_margin,
+                    styles.no_data,
+                  )}
+                >
+                  <span>데이터가 없습니다.</span>
+                </div>
+              )}
             </>
           )}
         </div>

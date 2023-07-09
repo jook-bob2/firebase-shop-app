@@ -1,4 +1,4 @@
-const NO_IMAGE = '/public/images/no_image.webp';
+export const NO_IMAGE = '/images/no_image.webp';
 
 export const PRODUCT_ITEM_MOCK_LIST = [
   {
